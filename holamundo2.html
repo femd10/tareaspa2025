@@ -3,61 +3,197 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Kawasaki</title>
+  <title>Motos</title>
   <style>
-    body { font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif; margin: 2rem; }
-    h1 { margin-bottom: 1rem; text-align: center; }
-    table { width: 100%; border-collapse: collapse; text-align: center; }
-    td { border: 1px solid #ccc; padding: 0.75rem; vertical-align: middle; }
+    body {
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      margin: 2rem;
+      background: linear-gradient(to bottom, #d4f7dc, #a2e3b5);
+      color: #222;
+    }
+    h1, h2 { text-align: center; }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      text-align: center;
+      background: #fff;
+      margin-bottom: 2rem;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    }
+    td {
+      border: 1px solid #ccc;
+      padding: 0.75rem;
+      vertical-align: middle;
+    }
     img { max-width: 120px; height: auto; }
-    button { padding: 0.6rem 1.25rem; border: 1px solid #666; border-radius: 0.5rem; background: #f5f5f5; cursor: pointer; }
-    button:hover { background: #e9e9e9; }
+    input {
+      padding: 0.4rem;
+      width: 90%;
+      border: 1px solid #aaa;
+      border-radius: 0.3rem;
+    }
+    button {
+      padding: 0.6rem 1.25rem;
+      border: none;
+      border-radius: 0.5rem;
+      background: #4CAF50;
+      color: white;
+      cursor: pointer;
+    }
+    button:hover { background: #45a049; }
+    ul {
+      margin-top: 2rem;
+      padding-left: 1.5rem;
+      line-height: 1.6;
+    }
+    ul li { margin-bottom: 1rem; }
   </style>
 </head>
 <body>
 
-  <h1>Kawasaki</h1>
+  <h1>Hola Mundo</h1>
 
-  <table>
-    <tbody>
-      <tr>
-        <td>Logotipo</td>
-        <td>Modelo</td>
-        <td>Cilindrada</td>
-      </tr>
-
-      <tr>
-        <td rowspan="5">
-          <img src="https://th.bing.com/th/id/R.c950aeee0820a017ca45f2501c336405?rik=452%2bgP3pRxHC4g&riu=http%3a%2f%2fmotoparte.mx%2fcdn%2fshop%2fcollections%2fKawasaki-Logo_1200x1200.png%3fv%3d1719686829&ehk=0%2fk0rnRBpgSx8SaMu%2fpuqYBXd5iLBnzMQb41hgxsCoQ%3d&risl=&pid=ImgRaw&r=0" alt="Logo Kawasaki">
-        </td>
-        <td>Ninja 400</td>
-        <td>399 cc</td>
-      </tr>
-      <tr>
-        <td>Z650</td>
-        <td>649 cc</td>
-      </tr>
-      <tr>
-        <td>Versys 650</td>
-        <td>649 cc</td>
-      </tr>
-      <tr>
-        <td>Ninja ZX-10R</td>
-        <td>998 cc</td>
-      </tr>
-      <tr>
-        <td>ZH2</td>
-        <td>998 cc (supercargada)</td>
-      </tr>
-
-
-      <tr>
-        <td colspan="3">
-          <button type="button">enviar</button>
-        </td>
-      </tr>
-    </tbody>
+  <h2>Ingreso de nueva tabla de motos</h2>
+  <table id="formTable">
+    <tr>
+      <td>Logotipo</td>
+      <td>Modelo</td>
+      <td>Cilindrada</td>
+    </tr>
+    <tr>
+      <td rowspan="5"><input type="text" id="logo" placeholder="URL del logotipo"></td>
+      <td><input type="text" id="modelo1" placeholder="Modelo 1"></td>
+      <td><input type="text" id="cil1" placeholder="Cilindrada 1"></td>
+    </tr>
+    <tr><td><input type="text" id="modelo2" placeholder="Modelo 2"></td><td><input type="text" id="cil2" placeholder="Cilindrada 2"></td></tr>
+    <tr><td><input type="text" id="modelo3" placeholder="Modelo 3"></td><td><input type="text" id="cil3" placeholder="Cilindrada 3"></td></tr>
+    <tr><td><input type="text" id="modelo4" placeholder="Modelo 4"></td><td><input type="text" id="cil4" placeholder="Cilindrada 4"></td></tr>
+    <tr><td><input type="text" id="modelo5" placeholder="Modelo 5"></td><td><input type="text" id="cil5" placeholder="Cilindrada 5"></td></tr>
+    <tr><td colspan="3">Marca: <input type="text" id="marca" placeholder="Ej: Yamaha"></td></tr>
+    <tr><td colspan="3"><button onclick="guardarTabla()">Enviar</button></td></tr>
   </table>
+
+  <ol id="listaTablas">
+    <!-- Kawasaki -->
+    <li>
+      <h2>Kawasaki</h2>
+      <table>
+        <tr><td>Logotipo</td><td>Modelo</td><td>Cilindrada</td></tr>
+        <tr>
+          <td rowspan="5"><img src="https://motoparte.mx/cdn/shop/collections/Kawasaki-Logo_1200x1200.png" alt="Logo Kawasaki"></td>
+          <td>Ninja 400</td><td>399 cc</td>
+        </tr>
+        <tr><td>Z650</td><td>649 cc</td></tr>
+        <tr><td>Versys 650</td><td>649 cc</td></tr>
+        <tr><td>Ninja ZX-10R</td><td>998 cc</td></tr>
+        <tr><td>ZH2</td><td>998 cc (supercargada)</td></tr>
+        <tr><td colspan="3"><button>enviar</button></td></tr>
+      </table>
+    </li>
+
+    <!-- Honda -->
+    <li>
+      <h2>Honda</h2>
+      <table>
+        <tr><td>Logotipo</td><td>Modelo</td><td>Cilindrada</td></tr>
+        <tr>
+          <td rowspan="5"><img src="https://upload.wikimedia.org/wikipedia/commons/7/7b/Honda_Logo.svg" alt="Logo Honda"></td>
+          <td>CBR500R</td><td>471 cc</td>
+        </tr>
+        <tr><td>CB650R</td><td>649 cc</td></tr>
+        <tr><td>Africa Twin</td><td>1084 cc</td></tr>
+        <tr><td>CBR1000RR-R</td><td>999 cc</td></tr>
+        <tr><td>Rebel 500</td><td>471 cc</td></tr>
+        <tr><td colspan="3"><button>enviar</button></td></tr>
+      </table>
+    </li>
+
+    <!-- Suzuki -->
+    <li>
+      <h2>Suzuki</h2>
+      <table>
+        <tr><td>Logotipo</td><td>Modelo</td><td>Cilindrada</td></tr>
+        <tr>
+          <td rowspan="5"><img src="https://upload.wikimedia.org/wikipedia/commons/e/ee/Suzuki_logo_2025_%28vertical%29.svg" alt="Logo Suzuki"></td>
+          <td>GSX250R</td><td>248 cc</td>
+        </tr>
+        <tr><td>SV650</td><td>645 cc</td></tr>
+        <tr><td>V-Strom 650</td><td>645 cc</td></tr>
+        <tr><td>GSX-R1000</td><td>999 cc</td></tr>
+        <tr><td>Hayabusa</td><td>1340 cc</td></tr>
+        <tr><td colspan="3"><button>enviar</button></td></tr>
+      </table>
+    </li>
+
+    <!-- Ducati -->
+    <li>
+      <h2>Ducati</h2>
+      <table>
+        <tr><td>Logotipo</td><td>Modelo</td><td>Cilindrada</td></tr>
+        <tr>
+          <td rowspan="5"><img src="https://upload.wikimedia.org/wikipedia/commons/6/66/Ducati_red_logo.PNG" alt="Logo Ducati"></td>
+          <td>Monster 797</td><td>803 cc</td>
+        </tr>
+        <tr><td>Scrambler Icon</td><td>803 cc</td></tr>
+        <tr><td>Panigale V2</td><td>955 cc</td></tr>
+        <tr><td>Panigale V4</td><td>1103 cc</td></tr>
+        <tr><td>Multistrada V4</td><td>1158 cc</td></tr>
+        <tr><td colspan="3"><button>enviar</button></td></tr>
+      </table>
+    </li>
+  </ol>
+
+  <h2>Investigación</h2>
+  <ul>
+    <li><b>HTML (HyperText Markup Language):</b><br>
+      Es el lenguaje de marcado básico para estructurar el contenido de una página web. Permite organizar títulos, párrafos, tablas, imágenes y formularios. Junto con CSS y JavaScript es la base de la web moderna.</li>
+
+    <li><b>CSS (Cascading Style Sheets):</b><br>
+      Se utiliza para dar estilo a los elementos definidos en HTML. Controla colores, tipografías, márgenes, distribuciones y adaptabilidad en diferentes pantallas. Es esencial para crear páginas web atractivas y profesionales.</li>
+
+    <li><b>JavaScript:</b><br>
+      Es un lenguaje de programación que permite dotar a las páginas web de interactividad y dinamismo. Con JavaScript se pueden validar formularios, actualizar contenido sin recargar la página (AJAX), y desarrollar aplicaciones completas en el navegador o incluso en servidores (Node.js).</li>
+  </ul>
+
+  <script>
+    function guardarTabla() {
+      const marca = document.getElementById("marca").value;
+      const logo = document.getElementById("logo").value;
+      if (!marca || !logo) {
+        alert("Por favor ingrese la marca y el logotipo.");
+        return;
+      }
+      let modelos = [];
+      for (let i = 1; i <= 5; i++) {
+        let m = document.getElementById("modelo" + i).value;
+        let c = document.getElementById("cil" + i).value;
+        if (m && c) modelos.push({modelo: m, cil: c});
+      }
+      if (modelos.length === 0) {
+        alert("Por favor ingrese al menos un modelo con su cilindrada.");
+        return;
+      }
+      let tabla = `
+        <li>
+          <h2>${marca}</h2>
+          <table>
+            <tr><td>Logotipo</td><td>Modelo</td><td>Cilindrada</td></tr>
+            <tr>
+              <td rowspan="${modelos.length}">
+                <img src="${logo}" alt="Logo ${marca}">
+              </td>
+              <td>${modelos[0].modelo}</td>
+              <td>${modelos[0].cil}</td>
+            </tr>`;
+      for (let i = 1; i < modelos.length; i++) {
+        tabla += `<tr><td>${modelos[i].modelo}</td><td>${modelos[i].cil}</td></tr>`;
+      }
+      tabla += `<tr><td colspan="3"><button>enviar</button></td></tr></table></li>`;
+      document.getElementById("listaTablas").insertAdjacentHTML("beforeend", tabla);
+      document.querySelectorAll("#formTable input").forEach(input => input.value = "");
+      alert(`Tabla de ${marca} agregada con éxito`);
+    }
+  </script>
 
 </body>
 </html>
