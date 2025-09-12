@@ -1,0 +1,22 @@
+body {
+  background: none;      /* Sin color de fondo */
+  color: black;          /* Letra negra */
+  font-family: Arial, sans-serif;
+  text-align: center;
+  margin: 20px;
+}
+
+h1 {
+  margin-bottom: 20px;
+}
+
+table {
+  margin: 0 auto;        /* Centrar la tabla horizontalmente */
+  border-collapse: collapse;
+  font-size: 16px;
+}
+
+td {
+  border: 1px solid #000;
+  padding: 8px 12px;
+}

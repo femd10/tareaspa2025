@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Datos Ingresados</title>
+  <link rel="stylesheet" href="tabla.css">
+</head>
+<body>
+  <h1>Información Ingresada</h1>
+  <table id="tablaDatos">
+    <tbody></tbody>
+  </table>
+
+  <script>
+    function obtenerParametro(nombre) {
+      const params = new URLSearchParams(window.location.search);
+      return params.get(nombre) || "No proporcionado";
+    }
+
+    const datos = {
+      "Empresa": obtenerParametro('empresa'),
+      "Sector": obtenerParametro('sector'),
+      "Contacto": obtenerParametro('contacto'),
+      "Email": obtenerParametro('email'),
+      "Teléfono": obtenerParametro('telefono')
+    };
+
+    const cuerpo = document.querySelector('#tablaDatos tbody');
+    for (const [clave, valor] of Object.entries(datos)) {
+      const fila = document.createElement('tr');
+      const celdaClave = document.createElement('td');
+      const celdaValor = document.createElement('td');
+      celdaClave.textContent = clave + ":";
+      celdaValor.textContent = valor;
+      fila.appendChild(celdaClave);
+      fila.appendChild(celdaValor);
+      cuerpo.appendChild(fila);
+    }
+  </script>
+
+  <p style="text-align:center;"><a href="formulario.html">Volver al formulario</a></p>
+</body>
+</html>
