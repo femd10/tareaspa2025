@@ -9,26 +9,24 @@
 <body>
   <h1>Directorio Empresarial</h1>
   <form id="directorioForm" action="mostrar.html" method="GET">
-    <label for="empresa">Nombre de la empresa:</label>
-    <input type="text" id="empresa" name="empresa" required>
+    <label for="nombre">Nombre:</label>
+    <input type="text" id="nombre" name="nombre" required>
 
-    <label for="sector">Sector:</label>
-    <select id="sector" name="sector" required>
-      <option value="">Selecciona un sector</option>
-      <option value="Tecnología">Tecnología</option>
-      <option value="Comercio">Comercio</option>
-      <option value="Servicios">Servicios</option>
-      <option value="Industria">Industria</option>
+    <label for="tipoEntidad">Proveedor o Cliente:</label>
+    <select id="tipoEntidad" name="tipoEntidad" required>
+      <option value="">Selecciona una opción</option>
+      <option value="Proveedor">Proveedor</option>
+      <option value="Cliente">Cliente</option>
     </select>
 
-    <label for="contacto">Nombre del contacto:</label>
-    <input type="text" id="contacto" name="contacto" required>
+    <label for="tipoCompra">Tipo de compra:</label>
+    <input type="text" id="tipoCompra" name="tipoCompra" placeholder="Ej. Mayorista, Minorista" required>
 
-    <label for="email">Correo electrónico:</label>
-    <input type="email" id="email" name="email" required>
+    <label for="queVendeCompra">Qué vende o compra:</label>
+    <input type="text" id="queVendeCompra" name="queVendeCompra" placeholder="Producto o servicio" required>
 
-    <label for="telefono">Teléfono:</label>
-    <input type="tel" id="telefono" name="telefono" required>
+    <label for="contacto">Información de contacto:</label>
+    <input type="text" id="contacto" name="contacto" placeholder="Teléfono o correo" required>
 
     <button type="submit">Enviar</button>
   </form>
