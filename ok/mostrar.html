@@ -19,11 +19,11 @@
     }
 
     const datos = {
-      "Empresa": obtenerParametro('empresa'),
-      "Sector": obtenerParametro('sector'),
-      "Contacto": obtenerParametro('contacto'),
-      "Email": obtenerParametro('email'),
-      "Teléfono": obtenerParametro('telefono')
+      "Nombre": obtenerParametro('nombre'),
+      "Proveedor o Cliente": obtenerParametro('tipoEntidad'),
+      "Tipo de compra": obtenerParametro('tipoCompra'),
+      "Qué vende o compra": obtenerParametro('queVendeCompra'),
+      "Información de contacto": obtenerParametro('contacto')
     };
 
     const cuerpo = document.querySelector('#tablaDatos tbody');
