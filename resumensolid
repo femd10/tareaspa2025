@@ -1,0 +1,101 @@
+✅ Principios SOLID (Explicados)
+1. Single Responsibility Principle (SRP)
+
+Una clase debe tener una única razón para cambiar.
+
+Significa que cada clase o módulo debe enfocarse en una sola cosa o responsabilidad.
+
+Si una clase tiene múltiples responsabilidades, cualquier cambio en una de ellas podría afectar las otras, haciendo que el código sea más difícil de mantener y más propenso a errores.
+
+Ejemplo: En lugar de tener una clase Empleado que maneje tanto datos personales como cálculo de nómina, es mejor separar esas responsabilidades en clases diferentes.
+
+2. Open/Closed Principle (OCP)
+
+El software debe estar abierto para extensión, pero cerrado para modificación.
+
+Esto quiere decir que puedes agregar funcionalidades nuevas sin alterar el código existente, para evitar introducir bugs.
+
+Normalmente se logra usando abstracciones como interfaces o clases base y extendiendo esas clases para agregar nuevas funcionalidades.
+
+Ejemplo: Un sistema de pagos puede tener una clase base Pago y distintas subclases como PagoConTarjeta, PagoConPayPal, etc., que puedes agregar sin modificar la clase base.
+
+3. Liskov Substitution Principle (LSP)
+
+Los objetos de una clase derivada deben poder sustituir a objetos de la clase base sin alterar el correcto funcionamiento del programa.
+
+La subclase debe respetar el comportamiento esperado de la clase base, sin introducir efectos secundarios inesperados.
+
+Si un cliente espera un objeto del tipo base, puede usar sin problema un objeto de la subclase.
+
+Ejemplo: Si tienes una clase Ave y una subclase Pato, todas las funciones que usan Ave deberían poder funcionar correctamente con un Pato.
+
+4. Interface Segregation Principle (ISP)
+
+Los clientes no deben estar forzados a depender de interfaces que no usan.
+
+Es mejor dividir interfaces grandes y generales en interfaces más pequeñas y específicas para que las clases solo implementen lo que necesitan.
+
+Evita que las clases se llenen de métodos que no utilizan, lo cual hace el código más limpio y entendible.
+
+Ejemplo: En lugar de tener una interfaz Animal con métodos volar(), nadar(), caminar(), es mejor crear interfaces específicas para cada tipo de comportamiento.
+
+5. Dependency Inversion Principle (DIP)
+
+Los módulos de alto nivel no deben depender de módulos de bajo nivel; ambos deben depender de abstracciones.
+
+Las abstracciones no deben depender de los detalles, sino los detalles de las abstracciones.
+
+Esto permite cambiar las implementaciones concretas sin afectar el código que depende de esas abstracciones.
+
+Ejemplo: En lugar de que una clase Controlador cree directamente un objeto Repositorio, debería depender de una interfaz IRepositorio y la implementación concreta se inyecta (inyección de dependencias).
+
+🧩 Otros 5 principios de diseño (Explicados)
+1. DRY (Don’t Repeat Yourself)
+
+Evita la duplicación de código o lógica.
+
+La duplicación lleva a inconsistencias y hace difícil mantener el código. Si algo cambia, debes actualizar todas las copias.
+
+Centralizar el código común en funciones, clases o módulos facilita su mantenimiento.
+
+Ejemplo: Si tienes la lógica de cálculo de impuestos en varios sitios, mejor ponerla en un solo método reutilizable.
+
+2. YAGNI (You Aren’t Gonna Need It)
+
+No implementes funcionalidades antes de que sean necesarias.
+
+Muchas veces los desarrolladores agregan características “por si acaso” que nunca se usan, lo que complica el sistema y retrasa el desarrollo.
+
+Se recomienda desarrollar solo lo que se requiere en el momento, ajustando el código cuando sea necesario.
+
+Ejemplo: No crear un sistema de reportes complejos si aún no se han solicitado.
+
+3. SoC (Separation of Concerns)
+
+Separación de responsabilidades o intereses.
+
+Cada parte del sistema debe encargarse de una preocupación específica y estar desacoplada del resto.
+
+Facilita entender, modificar y escalar el sistema, porque los cambios en una preocupación no afectan a otras.
+
+Ejemplo: En una aplicación web, separar la lógica de presentación, la lógica de negocio y el acceso a datos en capas diferentes.
+
+4. Tell, Don’t Ask
+
+Dile a los objetos qué hacer, no les preguntes por su estado para decidir qué hacer.
+
+En lugar de consultar atributos o estados y tomar decisiones fuera del objeto, se delega el comportamiento al propio objeto.
+
+Esto mejora la encapsulación y hace el código más orientado a objetos y menos procedural.
+
+Ejemplo: En lugar de preguntar si un Pedido está listo y luego procesarlo, simplemente llamas a pedido.procesar() y el objeto sabe cómo hacerlo.
+
+5. Composition Over Inheritance
+
+Prefiere la composición (usar objetos dentro de otros) en lugar de la herencia para reutilizar código.
+
+La composición es más flexible y evita problemas como la herencia múltiple o jerarquías complejas.
+
+Permite cambiar el comportamiento de los objetos en tiempo de ejecución y mejora la reutilización.
+
+Ejemplo: En lugar de que Coche herede de Motor, el Coche puede tener un objeto Motor para delegar su funcionamiento.
