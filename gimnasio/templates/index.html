@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Inscripción Gimnasio</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <header>
+        <h1>🏋️ Inscripción - Gimnasio VitalForce</h1>
+        <p>Completa tus datos para generar una rutina personalizada</p>
+    </header>
+
+    <main>
+        <form method="POST" class="formulario">
+            <label>Nombre:</label>
+            <input type="text" name="nombre" required>
+
+            <label>Edad:</label>
+            <input type="number" name="edad" min="10" required>
+
+            <label>Días que planeas entrenar (1 a 7):</label>
+            <input type="number" name="dias" min="1" max="7" required>
+
+            <label>Objetivo:</label>
+            <select name="tipo" required>
+                <option value="adelgazar">Adelgazar</option>
+                <option value="ganar musculo">Ganar músculo</option>
+            </select>
+
+            <button type="submit">Generar Rutina 💪</button>
+        </form>
+    </main>
+
+    <footer>
+        <p>© 2025 Gimnasio VitalForce | Diseñado con Flask 🐍</p>
+    </footer>
+</body>
+</html>

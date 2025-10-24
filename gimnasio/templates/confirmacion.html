@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Rutina Generada</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <header>
+        <h1>💪 Tu Rutina Personalizada</h1>
+        <p>¡Vamos con todo, {{ nombre }}!</p>
+    </header>
+
+    <main>
+        <section class="resultado">
+            <div class="tarjeta-rutina">
+                <p><strong>Edad:</strong> {{ edad }}</p>
+                <p><strong>Objetivo:</strong> {{ tipo|capitalize }}</p>
+                <p><strong>Días que planeas entrenar:</strong> {{ dias_usuario }}</p>
+                <p><strong>Días generados en tu rutina:</strong> {{ dias_rutina }}</p>
+
+                <h2>{{ rutina.nombre }}</h2>
+                <p class="descripcion">{{ rutina.descripcion }}</p>
+
+                <div class="dias-container">
+                    {% for dia, ejercicios in plan.items() %}
+                    <div class="dia">
+                        <h4>{{ dia }}</h4>
+                        <ul>
+                            {% for ejercicio in ejercicios %}
+                            <li>{{ ejercicio }}</li>
+                            {% endfor %}
+                        </ul>
+                    </div>
+                    {% endfor %}
+                </div>
+
+                <div class="botones">
+                    <a href="{{ url_for('descargar_pdf') }}" class="boton-descargar">📄 Descargar PDF</a>
+                    <a href="{{ url_for('inscripcion') }}" class="boton-volver">← Volver</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>© 2025 Gimnasio VitalForce | Diseñado con Flask 🐍</p>
+    </footer>
+</body>
+</html>
